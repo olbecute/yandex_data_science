@@ -4,128 +4,20 @@
 
 ## Список проектов
 
+| Название проекта | Цель | Библиотеки и стек |
+|------------------|-------|-------------------|
+| [Исследование надежности заемщиков](https://github.com/olbecute/yandex_data_science/tree/main/%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B0%D0%B4%D0%B5%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D0%B7%D0%B0%D0%B5%D0%BC%D1%89%D0%B8%D0%BA%D0%BE%D0%B2) | Провести статистический анализ данных о заемщиках, определить влияние факторов на возврат кредита, создать портрет надежного заемщика. | Pandas, предобработка данных, исследовательский анализ |
+| [Продажа квартир в Санкт-Петербурге — анализ рынка недвижимости](https://github.com/olbecute/yandex_data_science/tree/main/%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BE%D0%B1%D1%8A%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B5%20%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80) | Выделить факторы, влияющие на стоимость и продажи квартир в Санкт-Петербурге и соседних населенных пунктах. | Pandas, Matplotlib, Seaborn, предобработка данных, исследовательский анализ |
+| [Определение выгодного тарифа для телеком компании](https://github.com/olbecute/yandex_data_science/blob/main/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D1%8B%20%D1%81%D0%B0%D0%BC%D0%BE%D0%BA%D0%B0%D1%82%D0%BE%D0%B2/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D1%8B%20%D1%81%D0%B0%D0%BC%D0%BE%D0%BA%D0%B0%D1%82%D0%BE%D0%B2.ipynb) | Проанализировать данные и проверить гипотезы, определить, являются ли пользователи с подпиской более выгодными. | Pandas, NumPy, Matplotlib, SciPy, Math, предобработка данных, исследовательский анализ |
+| [Анализ продажи компьютерных игр](https://github.com/olbecute/yandex_data_science/blob/main/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%20%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D1%85%20%D0%B8%D0%B3%D1%80/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%20%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D1%85%20%D0%B8%D0%B3%D1%80.ipynb) | Определить актуальные консоли и составить портрет пользователей в разных регионах. | Pandas, Matplotlib, SciPy, NumPy, проверка статистических гипотез |
+| [Построение линейной модели для компании "Эколуг"](https://github.com/olbecute/yandex_data_science/blob/main/%D0%92%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BB%D1%83%D0%B3%2C%20%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B5%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8/%D0%9B%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B5%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8.ipynb) | Построить модели линейной и логистической регрессии для прогнозирования удоя и вкуса молока. | Pandas, Matplotlib, SciPy, NumPy, Scikit-learn |
+| [Персонализация предложений клиентов интернет-магазина "В один клик"](https://github.com/olbecute/yandex_data_science/blob/main/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82-%D0%BC%D0%B0%D0%B3%D0%B0%D0%B7%D0%B8%D0%BD%2C%20%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%83%D1%87%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%BC/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82-%D0%BC%D0%B0%D0%B3%D0%B0%D0%B7%D0%B8%D0%BD.ipynb) | Разработать персонализированные предложения для повышения покупательской способности клиентов. | Pandas, Matplotlib, SciPy, NumPy, Scikit-learn, Phik |
+| [HR-аналитика компании «Работа с заботой»](https://github.com/olbecute/yandex_data_science/blob/main/HR-%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8%20%C2%AB%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D1%81%20%D0%B7%D0%B0%D0%B1%D0%BE%D1%82%D0%BE%D0%B9%C2%BB/HR-%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0.ipynb) | Построить модели для прогнозирования уровня удовлетворённости сотрудников и их увольнения. | Pandas, Matplotlib, SciPy, NumPy, Scikit-learn, SHAP |
+| [Выбор локации для скважины](https://github.com/olbecute/yandex_data_science/blob/main/%D0%92%D1%8B%D0%B1%D0%BE%D1%80%20%D0%BB%D0%BE%D0%BA%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%BA%D0%B2%D0%B0%D0%B6%D0%B8%D0%BD%D1%8B/%D0%A1%D0%BA%D0%B2%D0%B0%D0%B6%D0%B8%D0%BD%D1%8B.ipynb) | Определить регион с максимальной прибылью от добычи с использованием Bootstrap. | Pandas, Matplotlib, SciPy, NumPy, Scikit-learn, SHAP |
+| [Запросы к базе данных о фондах и инвестициях]() | Проанализировать данные о фондах и инвестициях с помощью SQL-запросов. | PostgreSQL |
+| [Определение стоимости автомобиля](https://github.com/olbecute/yandex_data_science/blob/main/%D0%9E%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D0%B5%D0%B9/%D0%9F%D1%80%D0%B5%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%86%D0%B5%D0%BD.ipynb) | Построить модель для определения стоимости автомобилей с пробегом. | Pandas, Matplotlib, SciPy, NumPy, Scikit-learn, CatBoost, LightGBM |
+| [Прогнозирование заказов такси](https://github.com/olbecute/yandex_data_science/blob/main/%D0%9F%D1%80%D0%BE%D0%B3%D0%BD%D0%BE%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%BE%D0%B2%20%D1%82%D0%B0%D0%BA%D1%81%D0%B8%2C%20%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5%20%D1%80%D1%8F%D0%B4%D1%8B/%D0%92%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5%20%D1%80%D1%8F%D0%B4%D1%8B.ipynb) | Построить модель для прогнозирования заказов такси на основе временных рядов. | Pandas, Matplotlib, SciPy, NumPy, Scikit-learn, LightGBM, временные ряды |
+| [Проект для "Викишоп", классификация комментариев](https://github.com/olbecute/yandex_data_science/blob/main/%D0%92%D0%B8%D0%BA%D0%B8%D1%88%D0%BE%D0%BF%2C%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BA%D0%BE%D0%BC%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%B8%D0%B5%D0%B2/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D1%81%20%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%BC.ipynb) | Обучить модель классифицировать комментарии на позитивные и негативные. | Pandas, NLTK, Scikit-learn, re, CatBoost |
+| [Проект для "Хлеб-Соль", компьютерное зрение](https://github.com/olbecute/yandex_data_science/blob/main/%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D0%BE%D0%B5%20%D0%B7%D1%80%D0%B5%D0%BD%D0%B8%D0%B5%2C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82/%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D0%BE%D0%B5%20%D0%B7%D1%80%D0%B5%D0%BD%D0%B8%D0%B5.ipynb) | Разработать систему компьютерного зрения для обработки фотографий покупателей. | Pandas, NumPy, Seaborn, TensorFlow/Keras |
+| [Прогнозирование температуры стали на металлургическом комбинате](https://github.com/olbecute/yandex_data_science/blob/main/%D0%9F%D1%80%D0%BE%D0%B3%D0%BD%D0%BE%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%82%D0%B5%D0%BC%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D1%8B%20%D0%BF%D0%BB%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%81%D1%82%D0%B0%D0%BB%D0%B8%2C%20%D0%B2%D1%8B%D0%BF%D1%83%D1%81%D0%BA%D0%BD%D0%BE%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82/%D0%9F%D1%80%D0%BE%D0%B3%D0%BD%D0%BE%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%82%D0%B5%D0%BC%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D1%8B%20%D0%BF%D0%BB%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%81%D1%82%D0%B0%D0%BB%D0%B8.ipynb) | Разработать модель для предсказания температуры стали и оптимизации производства. | Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, LightGBM |
 
-### [Исследование надежности заемщиков](https://github.com/olbecute/yandex_data_science/tree/main/%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B0%D0%B4%D0%B5%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D0%B7%D0%B0%D0%B5%D0%BC%D1%89%D0%B8%D0%BA%D0%BE%D0%B2)
-
-**Цель:**\
-Основная цель заключается в проведении статистического анализа данных о заемщиках для определения влияния таких факторов, как наличие детей, семейное положение, уровень дохода и цели кредита, на возврат кредита в срок. Проект также нацелен на создание портрета надежного заемщика.
-\
-**Используемые инструменты:**\
-Pandas, предобработка данных и исследовательский анализ
-
-
-### [Продажа квартир в Санкт-Петербурге — анализ рынка недвижимости](https://github.com/olbecute/yandex_data_science/tree/main/%D0%98%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BE%D0%B1%D1%8A%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B9%20%D0%BE%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B5%20%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80)
-
-**Цель:**\
-Выделить факторы влияющие на стоимость и продажи квартир в Санкт-Петербурге и соседних населенных пунктах.
-\
-**Используемые инструменты:**\
-Pandas, Matplotlib, Seaborn, предобработка данных и исследовательский анализ
-
-
-### [Определение выгодного тарифа для телеком компании](https://github.com/olbecute/yandex_data_science/blob/main/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D1%8B%20%D1%81%D0%B0%D0%BC%D0%BE%D0%BA%D0%B0%D1%82%D0%BE%D0%B2/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D1%8B%20%D1%81%D0%B0%D0%BC%D0%BE%D0%BA%D0%B0%D1%82%D0%BE%D0%B2.ipynb)
-
-**Цель:**\
-Основная цель заключается в анализе данных и проверке гипотез, которые могут помочь бизнесу вырасти, а главное являются ли пользователи с подпиской более выгодными для компании.
-\
-**Используемые инструменты:**\
-Pandas, Numpy, Matplotlib, Skipy, Math, предобработка данных и исследовательский анализ
-
-
-### [Анализ продажи компьютерных игр](https://github.com/olbecute/yandex_data_science/blob/main/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%20%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D1%85%20%D0%B8%D0%B3%D1%80/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%20%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D1%8B%D1%85%20%D0%B8%D0%B3%D1%80.ipynb)
-
-**Цель:**\
-Необходимо выделить актуальные консоли и составить портрет пользователей в различных регионах.
-\
-**Используемые инструменты:**\
-Pandas, Matplotlib, проверка статистических гипотез, SciPy, Numpy
-
-
-### [Построение линейной модели для компании "Эколуг"](https://github.com/olbecute/yandex_data_science/blob/main/%D0%92%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BB%D1%83%D0%B3%2C%20%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B5%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8/%D0%9B%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B5%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8.ipynb)
-
-**Цель:**\
-Построить модели линейной и логистической регрессии для прогнозирования удоя и вкуса молока с целью отбора подходящих для покупки коров
-\
-**Используемые инструменты:**\
-Pandas, Matplotlib, SciPy, Numpy, Sklearn
-
-
-### [Персонализация предложений клиентов интернет-магазина "В один клик"](https://github.com/olbecute/yandex_data_science/blob/main/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82-%D0%BC%D0%B0%D0%B3%D0%B0%D0%B7%D0%B8%D0%BD%2C%20%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20%D1%83%D1%87%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%BC/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82-%D0%BC%D0%B0%D0%B3%D0%B0%D0%B7%D0%B8%D0%BD.ipynb)
-
-**Цель:**\
-Разработка решения, которое позволит персонализовать предложения постоянным клиентам интернет-магазина "В один клик", чтобы повысить их покупательскую способность
-\
-**Используемые инструменты:**\
-Pandas, Matplotlib, SciPy, Numpy, Sklearn, Phik
-
-
-### [HR-аналитика компании «Работа с заботой»](https://github.com/olbecute/yandex_data_science/blob/main/HR-%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8%20%C2%AB%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D1%81%20%D0%B7%D0%B0%D0%B1%D0%BE%D1%82%D0%BE%D0%B9%C2%BB/HR-%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D1%82%D0%B8%D0%BA%D0%B0.ipynb)
-
-**Цель:**\
-Помочь компании «Работа с заботой» с оптимизацией управлением персонала: построить модель, которая сможет предсказать уровень удовлетворённости сотрудника на основе данных заказчика, и модель, которая сможет на основе данных заказчика предсказать то, что сотрудник уволится из компании.
-\
-**Используемые инструменты:**\
-Pandas, Matplotlib, SciPy, Numpy, Sklearn, Shap
-
-
-### [Выбор локации для скважины](https://github.com/olbecute/yandex_data_science/blob/main/%D0%92%D1%8B%D0%B1%D0%BE%D1%80%20%D0%BB%D0%BE%D0%BA%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%BA%D0%B2%D0%B0%D0%B6%D0%B8%D0%BD%D1%8B/%D0%A1%D0%BA%D0%B2%D0%B0%D0%B6%D0%B8%D0%BD%D1%8B.ipynb)
-
-**Цель:**\
-Провести анализ скважин для добывающей компании «ГлавРосГосНефть» техникой Bootstrap. На полученных данных построить модель для определения региона, где добыча принесёт наибольшую прибыль.
-\
-**Используемые инструменты:**\
-Pandas, Matplotlib, SciPy, Numpy, Sklearn, Shap
-
-
-### [Запросы к базе данных о фондах и инвестициях]()
-
-**Цель:**\
-Подготовить запросы PostgeSQL и проанализировать данные о фондах и инвестициях, написав запросы к базе.
-\
-**Используемые инструменты:**\
-PostgeSQL
-
-
-### [Определение стоимости автомобиля](https://github.com/olbecute/yandex_data_science/blob/main/%D0%9E%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D0%B5%D0%B9/%D0%9F%D1%80%D0%B5%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%86%D0%B5%D0%BD.ipynb)
-
-**Цель:**\
-Построить модель, определяющую ее стоимость, для сервиса по продаже автомобилей с пробегом «Не бит, не крашен».
-\
-**Используемые инструменты:**\
-Pandas, Matplotlib, SciPy, Numpy, Sklearn, Time, Catboost, Lightgbm
-
-
-### [Прогнозирование заказов такси](https://github.com/olbecute/yandex_data_science/blob/main/%D0%9F%D1%80%D0%BE%D0%B3%D0%BD%D0%BE%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%BE%D0%B2%20%D1%82%D0%B0%D0%BA%D1%81%D0%B8%2C%20%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5%20%D1%80%D1%8F%D0%B4%D1%8B/%D0%92%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5%20%D1%80%D1%8F%D0%B4%D1%8B.ipynb)
-
-**Цель:**\
-Построить модель с различными гиперпараметрами для прогнозирования заказов такси с использованием теории по временным рядам.
-\
-**Используемые инструменты:**\
-Pandas, Matplotlib, SciPy, Numpy, Sklearn, Time, Lightgbm, временные ряды
-
-
-### [Проект для "Викишоп", класссификация комментариев](https://github.com/olbecute/yandex_data_science/blob/main/%D0%92%D0%B8%D0%BA%D0%B8%D1%88%D0%BE%D0%BF%2C%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BA%D0%BE%D0%BC%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%B8%D0%B5%D0%B2/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D1%81%20%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%BC.ipynb)
-
-**Цель:**\
-Обучить модель классифицировать комментарии на позитивные и негативные.
-\
-**Используемые инструменты:**\
-Pandas, nltk, Sklearn, re, Catboost
-
-
-### [Проект для "Хлеб-Соль", комьютерное зрение](https://github.com/olbecute/yandex_data_science/blob/main/%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D0%BE%D0%B5%20%D0%B7%D1%80%D0%B5%D0%BD%D0%B8%D0%B5%2C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82/%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D0%BE%D0%B5%20%D0%B7%D1%80%D0%B5%D0%BD%D0%B8%D0%B5.ipynb)
-
-**Цель:**\
-Разработать систему компьютерного зрения для обработки фотографии покупателей с использованием основ нейроных сетей.
-\
-**Используемые инструменты:**\
-Pandas, Numpy, Seaborn , Tensorflow.keras
-
-
-### [Прогнозирование температуры стали на металлургическом комбинате](https://github.com/olbecute/yandex_data_science/blob/main/%D0%9F%D1%80%D0%BE%D0%B3%D0%BD%D0%BE%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%82%D0%B5%D0%BC%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D1%8B%20%D0%BF%D0%BB%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%81%D1%82%D0%B0%D0%BB%D0%B8%2C%20%D0%B2%D1%8B%D0%BF%D1%83%D1%81%D0%BA%D0%BD%D0%BE%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82/%D0%9F%D1%80%D0%BE%D0%B3%D0%BD%D0%BE%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%82%D0%B5%D0%BC%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D1%8B%20%D0%BF%D0%BB%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D1%81%D1%82%D0%B0%D0%BB%D0%B8.ipynb)
-
-**Цель:**\
-Разработать модель машинного обучения для предсказания температуры стали на этапе обработки с целью оптимизации производственных расходов и контроля энергопотребления.
-\
-**Используемые инструменты:**\
-Pandas, numpy, matplotlib, seaborn, sklearn, LightGBM
