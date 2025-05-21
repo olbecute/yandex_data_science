@@ -1,113 +1,325 @@
-# Проекты Яндекс.Практикум - Data Science
+```markdown
+# Анализ данных о фондах и инвестициях (PostgreSQL)
 
-В этом репозитории собраны проекты сделанные мной в рамках прохождения курсов Яндекс.Практикум специализация Data Science.
+**Цель:** проанализировать данные о фондах и инвестициях, написав запросы к базе данных.
 
-## Список проектов
+## Выполненные задачи
 
-### [Исследование надежности заемщиков](https://github.com/SergeyKrasikov/yandex-praktikum-projects/blob/master/Исследование%20надёжности%20заёмщиков)
+### 1. Закрытые компании
+```sql
+SELECT *
+FROM public.company
+WHERE status='closed'
+```
 
-**Цель:**\
-На основе данных от кредитного отдела банка о платежеспособности клиентов, провести статистический анализ и выявить влияют ли на возврат кредита такие факторы, как: наличие детей, семейное положение, доход, цели кредита.
-Необходимо собрать портрет надежного заемщика.
-\
-**Используемые инструменты:**\
-Pandas, PyMystem3, лемматизация, предобработка данных
+### 2. Привлечённые средства новостных компаний США
+```sql
+SELECT funding_total
+FROM company
+WHERE category_code = 'news'
+   AND country_code = 'USA'
+ORDER BY funding_total DESC;
+```
 
-### [Продажа квартир в Санкт-Петербурге — анализ рынка недвижимости](https://github.com/SergeyKrasikov/yandex-praktikum-projects/blob/master/Продажа%20квартир%20в%20Санкт-Петербурге%20—%20анализ%20рынка%20недвижимости)
+### 3. Сумма сделок по покупке компаний за наличные (2011-2013)
+```sql
+SELECT SUM(price_amount)
+FROM acquisition
+WHERE term_code  = 'cash'
+  AND EXTRACT('year' FROM acquired_at) BETWEEN 2011 AND 2013;
+```
 
-**Цель:**\
-Используя архив объявлений о продаже квартир Яндекс.Недвижимость в Санкт-Петербурге и соседних населенных пунктах. Выделить факторы влияющие на стоимость и продажи квартир.
-\
-**Используемые инструменты:**\
-Pandas, Matplotlib
+### 4. Люди с аккаунтами, начинающимися на 'Silver'
+```sql
+SELECT first_name, last_name, network_username
+FROM people
+WHERE network_username LIKE 'Silver%';
+```
 
-### [Определение выгодного тарифа для телеком компании](https://github.com/SergeyKrasikov/yandex-praktikum-projects/blob/master/Определение%20выгодного%20тарифа%20для%20телеком%20компании)
-**Цель:**\
-На основании данных о 500 пользователях оператора сотовой связи.Необходимо проанализировать какой тариф, приносит больше денег компании. Для последующей корректировки рекламных бюджетов.
-\
-**Используемые инструменты:**\
-Pandas, Matplotlib, проверка статистических гипотез, SciPy, numpy
+### 5. Люди с 'money' в username и фамилией на 'K'
+```sql
+SELECT *
+FROM people
+WHERE network_username LIKE '%money%'
+  AND last_name LIKE 'K%';
+```
 
+### 6. Сумма инвестиций по странам
+```sql
+SELECT country_code,
+       SUM(funding_total)
+FROM company
+GROUP BY country_code
+ORDER BY SUM(funding_total) DESC;
+```
 
-### [Изучение закономерностей, определяющих успешность игр](https://github.com/SergeyKrasikov/yandex-praktikum-projects/blob/master/Изучение%20закономерностей%2C%20определяющих%20успешность%20игр)
+### 7. Минимальные и максимальные инвестиции по датам
+```sql
+SELECT funded_at,
+       MIN(raised_amount),
+       MAX(raised_amount)
+FROM funding_round
+GROUP BY funded_at
+HAVING MIN(raised_amount) <> 0
+   AND MIN(raised_amount) <> MAX(raised_amount);
+```
 
-**Цель:**\
-На основании данных предоставленных интернет-магазином торгующим по всему миру компьютерными играми. Необходимо выделить актуальные консоли и составить портрет пользователей в различных регионах.
-\
-**Используемые инструменты:**\
-Pandas, Matplotlib, проверка статистических гипотез, SciPy, numpy
+### 8. Категоризация фондов по активности
+```sql
+SELECT *,
+       CASE
+           WHEN invested_companies < 20 THEN 'low_activity'
+           WHEN invested_companies >= 20 AND invested_companies < 100 THEN 'middle_activity'
+           WHEN invested_companies >= 100 THEN 'high_activity'
+       END
+FROM fund;
+```
 
+### 9. Среднее количество раундов по категориям
+```sql
+SELECT CASE
+           WHEN invested_companies>=100 THEN 'high_activity'
+           WHEN invested_companies>=20 THEN 'middle_activity'
+           ELSE 'low_activity'
+       END AS activity,
+       ROUND(AVG(investment_rounds))
+FROM fund
+GROUP BY activity
+ORDER BY ROUND(AVG(investment_rounds));
+```
 
-### [Рекомендация тарифов](https://github.com/SergeyKrasikov/yandex-praktikum-projects/blob/master/Рекомендация%20тарифов)
+### 10. Топ-10 активных стран-инвесторов (2010-2012)
+```sql
+SELECT 
+    f.country_code,
+    MIN(f.invested_companies) AS min_invested_companies,
+    MAX(f.invested_companies) AS max_invested_companies,
+    AVG(f.invested_companies) AS avg_invested_companies
+FROM fund f
+WHERE EXTRACT(YEAR FROM f.founded_at) BETWEEN 2010 AND 2012
+GROUP BY f.country_code
+HAVING MIN(f.invested_companies) > 0
+ORDER BY avg_invested_companies DESC, f.country_code ASC
+LIMIT 10;
+```
 
-**Цель:**\
-На основании данных подготовленных в проекте ["Определение выгодного тарифа для телеком компании"](https://github.com/SergeyKrasikov/yandex-praktikum-projects/blob/master/Определение%20выгодного%20тарифа%20для%20телеком%20компании)  подобрать и обучить модель, для прогнозирования предпочтений пользователей при выборе тарифов.
-\
-**Используемые инструменты:**\
-Pandas, Matplotlib, sklearn, numpy
+### 11. Сотрудники и их учебные заведения
+```sql
+SELECT p.first_name,
+       p.last_name,
+       ed.instituition
+FROM people AS p
+LEFT JOIN education AS ed ON p.id = ed.person_id;
+```
 
-### [Отток клиентов банка](https://github.com/SergeyKrasikov/yandex-praktikum-projects/blob/master/Отток%20клиентов%20банка)
+### 12. Топ-5 компаний по количеству уникальных вузов сотрудников
+```sql
+SELECT comp.name,
+       COUNT(DISTINCT ed.instituition)
+FROM people AS p
+JOIN education AS ed ON p.id = ed.person_id
+JOIN company AS comp ON p.company_id = comp.id
+GROUP BY comp.name
+ORDER BY COUNT(ed.instituition) DESC
+LIMIT 5;
+```
 
-**Цель:**\
-На основании исторических данных оттока клиентов банка. Необходимо построить модель прогнозирования.
-\
-**Используемые инструменты:**\
-Pandas, Matplotlib, sklearn, numpy, re
+### 13. Закрытые компании с единственным раундом финансирования
+```sql
+SELECT name
+FROM company
+WHERE status = 'closed'
+  AND id IN (SELECT company_id
+             FROM funding_round
+             WHERE is_first_round = 1
+               AND is_last_round = 1);
+```
 
-### [Выбор региона для разработки новых нефтяных месторождений](https://github.com/SergeyKrasikov/yandex-praktikum-projects/blob/master/Выбор%20региона%20для%20разработки%20новых%20нефтяных%20месторождений)
+### 14. Сотрудники таких компаний
+```sql
+SELECT DISTINCT p.id AS employee_id
+FROM people p
+JOIN company c ON p.company_id = c.id
+WHERE c.status = 'closed'
+  AND c.id IN (
+      SELECT company_id
+      FROM funding_round
+      WHERE is_first_round = 1
+        AND is_last_round = 1
+  );
+```
 
-**Цель:**\
-Предоставлены данные проб нефти из трех регионов с измерениями качества нефти и объем ее запасов.\
-Необходимо построить модель способную помочь определить регион в котором добыча принесет большую прибыль.\
-Проанализировать риски.\
-**Используемые инструменты:**\
-Pandas, Matplotlib, sklearn, numpy, Bootstrap, Seaborn, машинное обучение
+### 15. Сотрудники и их учебные заведения
+```sql
+SELECT DISTINCT p.id,
+       ed.instituition
+FROM people AS p
+INNER JOIN education AS ed ON p.id = ed.person_id
+WHERE company_id IN (SELECT id
+                     FROM company
+                     WHERE status = 'closed'
+                           AND id IN (SELECT company_id
+                                      FROM funding_round
+                                      WHERE is_first_round = 1
+                                        AND is_last_round = 1));
+```
 
-### [Разработка алгоритма для защиты данных](https://github.com/SergeyKrasikov/yandex-praktikum-projects/blob/master/Разработка%20алгоритма%20для%20защиты%20данных)
-**Цель:**\
-Защитить данные клиентов страховой компании, чтобы при преобразовании качество моделей машинного обучения не ухудшилось. Обосновать преобразования.
-\
-**Используемые инструменты:**\
-Pandas, sklearn, numpy,  Seaborn, машинное обучение
+### 16. Количество учебных заведений на сотрудника
+```sql
+SELECT p.id,
+       COUNT(ed.instituition)
+FROM people AS p
+INNER JOIN education AS ed ON p.id = ed.person_id
+WHERE company_id IN (SELECT id
+                     FROM company
+                     WHERE status = 'closed'
+                           AND id IN (SELECT company_id
+                                      FROM funding_round
+                                      WHERE is_first_round = 1
+                                        AND is_last_round = 1))
+GROUP BY p.id;
+```
 
-### [Предсказание цены автомобиля](https://github.com/SergeyKrasikov/yandex-praktikum-projects/tree/master/Предсказание%20цены%20автомобиля)
-**Цель:**\
-Даны исторические данные сервиса по продаже автомобилей с пробегом.\
-Необходимо построить модель машинного обучения, для определения стоимости.\
-**Используемые инструменты:**\
-Pandas, sklearn, numpy,  Seaborn, машинное обучение
+### 17. Среднее число учебных заведений (всех сотрудников)
+```sql
+WITH people_instituition AS (
+    SELECT p.id,
+           COUNT(ed.instituition) AS count_instituition
+    FROM people AS p
+    INNER JOIN education AS ed ON p.id = ed.person_id
+    WHERE company_id IN (SELECT id
+                         FROM company
+                         WHERE status = 'closed'
+                           AND id IN (SELECT company_id
+                                      FROM funding_round
+                                      WHERE is_first_round = 1
+                                        AND is_last_round = 1))
+GROUP BY p.id)
 
-### [Прогнозирование заказов такси](https://github.com/SergeyKrasikov/yandex-praktikum-projects/tree/master/Прогнозирование%20заказов%20такси)
-**Цель:**\
-На основание исторических данных о заказах такси в аэропортах.\
-Необходимо построить модель машинного обучения, способную предсказывать количество заказов на следующий час.\
-**Используемые инструменты:**\
-Pandas, Matplotlib, sklearn, numpy, re, CatBoost, LightGBM, statsmodels, временные ряды, машинное обучение
+SELECT AVG(count_instituition)
+FROM people_instituition;
+```
 
-### [Классификация комментариев](https://github.com/SergeyKrasikov/yandex-praktikum-projects/tree/master/Классификация%20комментариев)
-**Цель:**\
-Необходимо обучить модель для классификации комментариев на позитивные и негативные.\
-**Используемые инструменты:**\
-Pandas, Matplotlib, sklearn, numpy, re, NLP, NLTK, машинное обучение
+### 18. Среднее число учебных заведений (сотрудники Socialnet)
+```sql
+WITH people_institution AS (
+    SELECT p.id,
+           COUNT(ed.instituition) AS count_institution
+    FROM people AS p
+    INNER JOIN education AS ed ON p.id = ed.person_id
+    WHERE p.company_id IN (SELECT id
+                           FROM company
+                           WHERE name = 'Socialnet')
+    GROUP BY p.id
+)
 
-### [Исследование данных авиакомпании](https://github.com/SergeyKrasikov/yandex-praktikum-projects/blob/master/Исследование%20данных%20авиакомпании)
-**Цель:**\
-Извлечь из базы данных авиакомпании количество рейсов на каждой модели самолёта с вылетом в сентябре 2018 года. И посчитать среднее количество прибывающих рейсов в день для каждого города за август 2018 года. Проанализировать полученные данные.\
-**Используемые инструменты:**\
-Pandas, Plotly, SQL
+SELECT AVG(count_institution) AS average_institutions
+FROM people_institution;
+```
 
-### [Определение возраста по фото](https://github.com/SergeyKrasikov/yandex-praktikum-projects/tree/master/Определение%20возраста%20по%20фото)
-**Цель:**\
-Необходимо построить модель, способную определять возраст людей по фотографиям.\
-**Используемые инструменты:**\
-Pandas, Plotly, keras, Matplotlib, numpy, CV
+### 19. Инвестиции в компании с >6 этапами (2012-2013)
+```sql
+SELECT fund.name AS name_of_fund,
+       comp.name AS name_of_company,
+       fr.raised_amount AS amount
+FROM investment AS invest
+JOIN fund ON invest.fund_id = fund.id
+JOIN funding_round AS fr ON invest.funding_round_id = fr.id
+JOIN company AS comp ON invest.company_id = comp.id
+WHERE comp.milestones > 6
+  AND EXTRACT('year' FROM fr.funded_at) BETWEEN 2012 AND 2013;
+```
 
-### [Прогноз оттока клиентов для оператора связи](https://github.com/SergeyKrasikov/yandex-praktikum-projects/tree/master/Определение%20возраста%20по%20фото)
-**Цель:**\
-Необходимо построить модель, способную определять возраст людей по фотографиям.\
-**Используемые инструменты:**\
-Pandas, Matplotlib, numpy
+### 20. Топ-10 сделок с соотношением цена/инвестиции
+```sql
+SELECT buy_comp.name AS name_acquiring_company,
+       ac.price_amount,
+       sell_comp.name AS name_acquired_company,
+       sell_comp.funding_total,
+       ROUND(ac.price_amount / sell_comp.funding_total) AS price_to_funding_rate
+FROM acquisition AS ac
+LEFT JOIN company AS buy_comp ON ac.acquiring_company_id = buy_comp.id
+LEFT JOIN company AS sell_comp ON ac.acquired_company_id = sell_comp.id
+WHERE ac.price_amount > 0
+  AND sell_comp.funding_total > 0
+ORDER BY ac.price_amount DESC, name_acquired_company
+LIMIT 10;
+```
 
+### 21. Социальные компании с финансированием (2010-2013)
+```sql
+SELECT comp.name,
+       EXTRACT('month' from fr.funded_at)
+FROM company AS comp
+JOIN funding_round AS fr ON fr.company_id = comp.id
+WHERE comp.category_code = 'social'
+  AND fr.raised_amount <> 0
+  AND EXTRACT('year' from fr.funded_at) BETWEEN 2010 AND 2013;
+```
 
+### 22. Статистика по месяцам (2010-2013)
+```sql
+WITH
+fund_count_monthly AS
+   (SELECT EXTRACT('month' from fr.funded_at) AS month,
+           COUNT(DISTINCT invest.fund_id) AS fund_count
+    FROM funding_round AS fr
+    INNER JOIN investment AS invest ON fr.id = invest.funding_round_id
+    WHERE EXTRACT('year' from fr.funded_at) BETWEEN 2010 AND 2013
+      AND invest.fund_id IN (SELECT id
+                             FROM fund
+                             WHERE country_code = 'USA')
+    GROUP BY month),
 
+acquired_company_monthly AS
+   (SELECT EXTRACT('month' from acquired_at) AS month,
+           COUNT(acquired_company_id) AS company_count,
+           SUM(price_amount) AS total_price
+    FROM acquisition
+    WHERE EXTRACT('year' from acquired_at) BETWEEN 2010 AND 2013
+    GROUP BY month)
+    
+SELECT fcm.month,
+       fcm.fund_count,
+       acm.company_count,
+       acm.total_price
+FROM fund_count_monthly AS fcm
+JOIN acquired_company_monthly AS acm ON fcm.month = acm.month;
+```
 
+### 23. Средние инвестиции по странам и годам
+```sql
+WITH 
+funding_2011 as
+   (SELECT country_code AS country, 
+           AVG(funding_total) AS avg_invest_2011
+    FROM company AS comp
+    WHERE EXTRACT('year' from founded_at) = 2011
+    GROUP BY country_code),
+
+funding_2012 as
+   (SELECT country_code AS country, 
+           AVG(funding_total) AS avg_invest_2012
+    FROM company AS comp
+    WHERE EXTRACT('year' from founded_at) = 2012
+    GROUP BY country_code),
+
+funding_2013 as
+   (SELECT country_code AS country, 
+           AVG(funding_total) AS avg_invest_2013
+    FROM company AS comp
+    WHERE EXTRACT('year' from founded_at) = 2013
+    GROUP BY country_code)
+
+SELECT f11.country,
+       f11.avg_invest_2011,
+       f12.avg_invest_2012,
+       f13.avg_invest_2013 
+FROM funding_2011 AS f11
+INNER JOIN funding_2012 AS f12 ON f11.country = f12.country
+INNER JOIN funding_2013 AS f13 ON f11.country = f13.country
+ORDER BY f11.avg_invest_2011 DESC;
+```
+
+Этот файл содержит все выполненные SQL-запросы с комментариями, которые можно использовать как документацию или отчёт о проделанной работе.
+```
